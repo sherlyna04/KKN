@@ -1,165 +1,166 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UMKM - Desa Sejahtera</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-    .dropdown {
-      display: none;
-    }
-    .dropdown.show {
-            display: block;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM Desa Sawah Hijau</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS inline -->
+    <style>
+        /* Reset & dasar */
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Arial',sans-serif;
+            line-height:1.6;
+            color:#2e3b2e;
+            background:#f0f7ee
         }
-  </style>
+
+        /* Header */
+        header{
+            background:url('https://static.republika.co.id/uploads/images/inpicture_slide/saung-di-tengah-sawah-ilustrasi-_130204203802-561.jpg')
+                       no-repeat center/cover;
+            height:300px;display:flex;justify-content:center;align-items:center;
+            color:#fff;position:relative;text-align:center
+        }
+        header::before{content:'';position:absolute;inset:0;background:rgba(46,94,46,.5);z-index:1}
+        .header-content{position:relative;z-index:2}
+        .header-content h1{
+            font-size:2.5em;margin-bottom:10px;
+            text-shadow:1px 1px 4px rgba(0,0,0,.7)
+        }
+        .header-content p{
+            font-size:1.2em;text-shadow:1px 1px 4px rgba(0,0,0,.7)
+        }
+
+        /* Navigasi */
+        nav{
+            background:#558855;padding:1em;
+            box-shadow:0 2px 5px rgba(0,0,0,.1)
+        }
+        nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap}
+        nav li{margin:0 15px}
+        nav a{
+            color:#fff;text-decoration:none;font-weight:bold;padding:5px 10px;
+            transition:color .3s
+        }
+        nav a:hover{color:#e0f2e9}
+
+        /* Main wrapper */
+        main{max-width:1200px;margin:20px auto;padding:0 20px}
+
+        /* Daftar UMKM */
+        .umkm-list{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(600px,1fr));
+            gap:20px;padding:20px 0
+        }
+        .umkm-item{
+            background:#fff;padding:20px;border-radius:10px;
+            box-shadow:0 4px 8px rgba(0,0,0,.1)
+        }
+        .umkm-content{display:flex;align-items:center;gap:20px}
+        .umkm-item img{
+            width:200px;height:auto;border-radius:10px
+        }
+        .umkm-text{flex:1;text-align:left}
+        .umkm-item h3{font-size:1.5em;color:#2e5e2e;margin-bottom:10px}
+        .umkm-item p{font-size:1em;color:#406640;margin-bottom:10px}
+
+        /* Tombol umum (jika suatu saat dipakai) */
+        .btn{
+            display:inline-block;padding:10px 20px;
+            background:#558855;color:#fff;text-decoration:none;border-radius:5px;
+            transition:background .3s
+        }
+        .btn:hover{background:#406640}
+
+        /* Footer */
+        footer{
+            background:#2e5e2e;color:#fff;text-align:center;
+            padding:10px 0;margin-top:20px
+        }
+
+        /* Responsif */
+        @media(max-width:768px){
+            header{height:200px}
+            .header-content h1{font-size:2em}
+            nav ul{flex-direction:column;text-align:center}
+            nav li{margin:10px 0}
+            .umkm-list{grid-template-columns:1fr}
+            .umkm-content{flex-direction:column;text-align:center}
+            .umkm-item img{width:100%;margin-bottom:15px}
+            .umkm-text{text-align:center}
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigation (same as index.html) -->
-  <nav class="bg-white shadow-lg fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
-            <div class="flex-shrink-0">
-                <a href="index.html" class="text-2xl font-bold text-green-600">Desa Sejahtera</a>
-            </div>
-            <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-4">
-                    <!-- Profil Desa Dropdown -->
-                    <div class="relative dropdown-trigger">
-                        <button onclick="toggleDropdown('profilDropdown')" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium flex items-center">
-                            Profil Desa
-                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div id="profilDropdown" class="dropdown absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                            <div class="py-1">
-                                <a href="tentang-kami.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tentang Kami</a>
-                                <a href="visi-misi.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Visi & Misi</a>
-                                <a href="sejarah.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sejarah</a>
-                                <a href="geografis.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Geografis</a>
-                                <a href="demografi.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Demografi</a>
-                            </div>
-                        </div>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="header-content">
+            <h1>UMKM Desa Sawah Hijau</h1>
+            <p>Produk Lokal yang Mendunia</p>
+        </div>
+    </header>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Beranda</a></li>
+            <li><a href="home.html#profil">Profil Desa</a></li>
+            <li><a href="home.html#berita">Berita</a></li>
+            <li><a href="home.html#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <section class="umkm-list">
+
+            <!-- UMKM 1 -->
+            <div class="umkm-item">
+                <div class="umkm-content">
+                    <img src="https://t-3.tstatic.net/jualbeli/img/njajal/2021/12/Melihat-Potensi-Kerajinan-Kreasi-Eceng-Gondok--Bisa-Jadi-Produk-Apa-Saja-Ya--master-305093734.jpg"
+                         alt="Kerajinan Eceng Gondok">
+                    <div class="umkm-text">
+                        <h3>Kerajinan Eceng Gondok</h3>
+                        <p><strong><i class="fas fa-phone"></i></strong> 0812‑3456‑7890 (Budi)</p>
+                        <p>
+                            Kerajinan eceng gondok dibuat dari bahan alami yang ramah lingkungan,
+                            seperti tas, anyaman, dan dekorasi rumah. Produk ini mendukung ekonomi lokal
+                            dan melestarikan budaya desa.
+                        </p>
                     </div>
-                    
-                    <!-- Pemerintahan Dropdown -->
-                    <div class="relative dropdown-trigger">
-                        <button onclick="toggleDropdown('pemerintahanDropdown')" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium flex items-center">
-                            Pemerintahan
-                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div id="pemerintahanDropdown" class="dropdown absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                            <div class="py-1">
-                                <a href="perangkat-desa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perangkat Desa</a>
-                                <a href="lembaga-desa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lembaga Desa</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="galeri.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium">Galeri</a>
-                    <a href="umkm.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium">UMKM</a>
-                    <a href="blog.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium">Blog</a>
                 </div>
             </div>
-        </div>
-    </div>
-</nav>
 
-  <!-- Page Content -->
-  <main class="pt-20 max-w-7xl mx-auto px-4">
-    <h1 class="text-4xl font-bold text-gray-800 mb-8">UMKM Desa Sejahtera</h1>
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- UMKM Item 1 -->
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-        <img src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg" alt="Kerajinan Bambu" class="w-full h-48 object-cover" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Kerajinan Bambu Sejahtera</h3>
-          <p class="text-gray-600 mb-4">Produk kerajinan tangan berkualitas dari bahan bambu pilihan.</p>
-          <a href="umkm-detail.html" class="inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300">Lihat Selengkapnya</a>
-        </div>
-      </div>
-      <!-- UMKM Item 2 -->
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-        <img src="https://images.pexels.com/photos/2064359/pexels-photo-2064359.jpeg" alt="Kuliner Tradisional" class="w-full h-48 object-cover" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Kuliner Tradisional Bu Siti</h3>
-          <p class="text-gray-600 mb-4">Aneka makanan tradisional dengan cita rasa autentik.</p>
-          <a href="umkm-detail.html" class="inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300">Lihat Selengkapnya</a>
-        </div>
-      </div>
-      <!-- UMKM Item 3 -->
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-        <img src="https://images.pexels.com/photos/4947281/pexels-photo-4947281.jpeg" alt="Tenun Tradisional" class="w-full h-48 object-cover" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Tenun Tradisional Ibu Asih</h3>
-          <p class="text-gray-600 mb-4">Kain tenun berkualitas dengan motif khas daerah.</p>
-          <a href="umkm-detail.html" class="inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300">Lihat Selengkapnya</a>
-        </div>
-      </div>
-    </div>
-  </main>
+            <!-- UMKM 2 -->
+            <div class="umkm-item">
+                <div class="umkm-content">
+                    <img src="https://asset-a.grid.id/crop/0x0:0x0/700x0/filters:watermark(img/stylo-watermark.png,437,355.5,45)/photo/2023/02/02/pengrajin-tembaga-dan-perak-1jp-20230202024005.jpeg"
+                         alt="Kerajinan Tembaga">
+                    <div class="umkm-text">
+                        <h3>Kerajinan Tembaga</h3>
+                        <p><strong><i class="fas fa-phone"></i></strong> 0812‑3456‑7891 (Ani)</p>
+                        <p>
+                            Kerajinan tembaga dibuat dengan teknik tradisional, menghasilkan peralatan rumah tangga
+                            dan dekorasi unik. Produk ini mendukung ekonomi lokal dan warisan budaya.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Footer (same as index.html) -->
-  <footer class="bg-gray-800 text-white py-12 mt-20">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="grid md:grid-cols-4 gap-8">
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Desa Sejahtera</h3>
-          <p class="text-gray-400">Membangun desa yang maju, mandiri, dan sejahtera dengan tetap menjaga kearifan lokal.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Link Cepat</h3>
-          <ul class="space-y-2">
-            <li><a href="tentang-kami.html" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
-            <li><a href="perangkat-desa.html" class="text-gray-400 hover:text-white">Pemerintahan</a></li>
-            <li><a href="galeri.html" class="text-gray-400 hover:text-white">Galeri</a></li>
-            <li><a href="umkm.html" class="text-gray-400 hover:text-white">UMKM</a></li>
-            <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Kontak</h3>
-          <ul class="space-y-2 text-gray-400">
-            <li class="flex items-start">
-              <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
-              <span>Jl. Desa Sejahtera No. 123<br />Kecamatan Makmur<br />Kabupaten Bahagia</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-phone mr-3"></i>
-              <span>(021) 1234-5678</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-envelope mr-3"></i>
-              <span>info@desasejahtera.id</span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Ikuti Kami</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white text-2xl">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-2xl">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-2xl">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-2xl">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-        <p class="text-gray-400">&copy; 2023 Desa Sejahtera. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>© 2025 Desa Sawah Hijau. Semua Hak Dilindungi.</p>
+    </footer>
 </body>
 </html>
