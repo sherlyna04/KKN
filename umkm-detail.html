@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail UMKM - Desa Sejahtera</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome.com/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .dropdown {
+            display: none;
+        }
+
+        .dropdown.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation (Same as index.html) -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-green-600">Desa Sejahtera</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <!-- Profil Desa Dropdown -->
+                        <div class="relative dropdown-trigger">
+                            <button onclick="toggleDropdown('profilDropdown')"
+                                class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium flex items-center">
+                                Profil Desa
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div id="profilDropdown"
+                                class="dropdown absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                <div class="py-1">
+                                    <a href="tentang-kami.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tentang Kami</a>
+                                    <a href="visi-misi.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Visi & Misi</a>
+                                    <a href="sejarah.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sejarah</a>
+                                    <a href="geografis.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Geografis</a>
+                                    <a href="demografi.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Demografi</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintahan Dropdown -->
+                        <div class="relative dropdown-trigger">
+                            <button onclick="toggleDropdown('pemerintahanDropdown')"
+                                class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium flex items-center">
+                                Pemerintahan
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div id="pemerintahanDropdown"
+                                class="dropdown absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                <div class="py-1">
+                                    <a href="perangkat-desa.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perangkat
+                                        Desa</a>
+                                    <a href="lembaga-desa.html"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lembaga Desa</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="galeri.html"
+                            class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium">Galeri</a>
+                        <a href="umkm.html"
+                            class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium">UMKM</a>
+                        <a href="blog.html"
+                            class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- UMKM Detail Section -->
+    <div class="pt-16">
+        <!-- Product Header -->
+        <div class="bg-gray-50 py-8">
+            <div class="max-w-7xl mx-auto px-4">
+                <nav class="flex mb-4" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                        <li class="inline-flex items-center">
+                            <a href="index.html" class="text-gray-700 hover:text-green-600">
+                                <i class="fas fa-home mr-2"></i>
+                                Beranda
+                            </a>
+                        </li>
+                        <li class="inline-flex items-center">
+                            <span class="mx-2 text-gray-400">/</span>
+                            <a href="umkm.html" class="text-gray-700 hover:text-green-600">UMKM</a>
+                        </li>
+                        <li class="inline-flex items-center">
+                            <span class="mx-2 text-gray-400">/</span>
+                            <span class="text-gray-500">Kerajinan Bambu Sejahtera</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Product Images -->
+                <div>
+                    <div class="mb-4">
+                        <img src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg"
+                            alt="Kerajinan Bambu" class="w-full h-96 object-cover rounded-lg shadow-lg">
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <img src="https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg"
+                            alt="Product view 1" class="w-full h-24 object-cover rounded-lg cursor-pointer">
+                        <img src="https://images.pexels.com/photos/2647715/pexels-photo-2647715.jpeg"
+                            alt="Product view 2" class="w-full h-24 object-cover rounded-lg cursor-pointer">
+                        <img src="https://images.pexels.com/photos/2647716/pexels-photo-2647716.jpeg"
+                            alt="Product view 3" class="w-full h-24 object-cover rounded-lg cursor-pointer">
+                        <img src="https://images.pexels.com/photos/2647717/pexels-photo-2647717.jpeg"
+                            alt="Product view 4" class="w-full h-24 object-cover rounded-lg cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800 mb-4">Kerajinan Bambu Sejahtera</h1>
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-400 mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                        <span class="text-gray-600">(4.5/5)</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Kerajinan tangan berkualitas tinggi yang dibuat dari bambu pilihan.
+                        Setiap produk dibuat dengan teliti oleh pengrajin terampil untuk menghasilkan karya yang unik
+                        dan bernilai seni tinggi.</p>
+
+                    <div class="mb-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Harga</h2>
+                        <p class="text-2xl font-bold text-green-600">Rp 150.000 - Rp 500.000</p>
+                    </div>
+
+                    <div class="space-y-4 mb-8">
+                        <a href="https://wa.me/6281234567890" target="_blank"
+                            class="inline-block w-full bg-green-600 text-white text-center px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Hubungi Pengelola
+                        </a>
+                        <a href="https://maps.google.com" target="_blank"
+                            class="inline-block w-full bg-blue-600 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Lihat Lokasi
+                        </a>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Pemilik UMKM</h2>
+                        <div class="flex items-center">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="Pemilik"
+                                class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Pak Bambang</h3>
+                                <p class="text-gray-600">Pengrajin Bambu Sejak 1990</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product List -->
+            <div class="mt-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8">Produk Kami</h2>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg" alt="Vas Bambu"
+                            class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Vas Bambu Artistik</h3>
+                            <p class="text-gray-600 mb-2">Rp 150.000</p>
+                            <p class="text-gray-600 text-sm mb-4">Vas bambu dengan ukiran tradisional</p>
+                            <a href="https://wa.me/6281234567890" target="_blank"
+                                class="inline-block w-full bg-green-600 text-white text-center px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                                Beli Sekarang
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/2647715/pexels-photo-2647715.jpeg" alt="Lampu Bambu"
+                            class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Lampu Gantung Bambu</h3>
+                            <p class="text-gray-600 mb-2">Rp 250.000</p>
+                            <p class="text-gray-600 text-sm mb-4">Lampu hias dari anyaman bambu</p>
+                            <a href="https://wa.me/6281234567890" target="_blank"
+                                class="inline-block w-full bg-green-600 text-white text-center px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                                Beli Sekarang
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/2647716/pexels-photo-2647716.jpeg"
+                            alt="Keranjang Bambu" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Keranjang Anyaman</h3>
+                            <p class="text-gray-600 mb-2">Rp 200.000</p>
+                            <p class="text-gray-600 text-sm mb-4">Keranjang multifungsi dari bambu</p>
+                            <a href="https://wa.me/6281234567890" target="_blank"
+                                class="inline-block w-full bg-green-600 text-white text-center px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                                Beli Sekarang
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/2647717/pexels-photo-2647717.jpeg"
+                            alt="Hiasan Dinding" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Hiasan Dinding Bambu</h3>
+                            <p class="text-gray-600 mb-2">Rp 300.000</p>
+                            <p class="text-gray-600 text-sm mb-4">Hiasan dinding motif etnik</p>
+                            <a href="https://wa.me/6281234567890" target="_blank"
+                                class="inline-block w-full bg-green-600 text-white text-center px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                                Beli Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other UMKM -->
+            <div class="mt-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8">UMKM Lainnya</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- UMKM 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/2064359/pexels-photo-2064359.jpeg"
+                            alt="Kuliner Tradisional" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Kuliner Tradisional Bu Siti</h3>
+                            <p class="text-gray-600 mb-4">Aneka makanan tradisional dengan cita rasa autentik.</p>
+                            <a href="umkm-detail-kuliner.html"
+                                class="inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300">Lihat
+                                Selengkapnya</a>
+                        </div>
+                    </div>
+
+                    <!-- UMKM 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4947281/pexels-photo-4947281.jpeg"
+                            alt="Tenun Tradisional" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Tenun Tradisional Ibu Asih</h3>
+                            <p class="text-gray-600 mb-4">Kain tenun berkualitas dengan motif khas daerah.</p>
+                            <a href="umkm-detail-tenun.html"
+                                class="inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300">Lihat
+                                Selengkapnya</a>
+                        </div>
+                    </div>
+
+                    <!-- UMKM 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3735149/pexels-photo-3735149.jpeg" alt="Batik Desa"
+                            class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Batik Desa Sejahtera</h3>
+                            <p class="text-gray-600 mb-4">Batik tulis dengan motif khas desa.</p>
+                            <a href="umkm-detail-batik.html"
+                                class="inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300">Lihat
+                                Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Desa Sejahtera</h3>
+                    <p class="text-gray-400">Membangun desa yang maju, mandiri, dan sejahtera dengan tetap menjaga
+                        kearifan lokal.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Link Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="tentang-kami.html" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                        <li><a href="perangkat-desa.html" class="text-gray-400 hover:text-white">Pemerintahan</a></li>
+                        <li><a href="galeri.html" class="text-gray-400 hover:text-white">Galeri</a></li>
+                        <li><a href="umkm.html" class="text-gray-400 hover:text-white">UMKM</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Kontak</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Jl. Desa Sejahtera No. 123<br>Kecamatan Makmur<br>Kabupaten Bahagia</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <span>(021) 1234-5678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@desasejahtera.id</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2023 Desa Sejahtera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
