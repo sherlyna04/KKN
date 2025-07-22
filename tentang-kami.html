@@ -1,143 +1,281 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tentang Kami - Desa Sejahtera</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-    .dropdown {
-      display: none;
-    }
-    .dropdown.show {
-            display: block;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan Dusun Jambu</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS inline -->
+    <style>
+        /* Reset & dasar */
+        * { margin: 0; padding: 0; box-sizing: border-box }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2e3b2e;
+            background: #f0f7ee;
         }
-  </style>
+
+        /* Header */
+        header {
+            background: url('https://cdn.idntimes.com/content-images/community/2022/08/fromandroid-327712b3c162ca9aa714c534b458c36c.jpg') no-repeat center/cover;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: relative;
+            text-align: center;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(46, 94, 46, 0.5);
+            z-index: 1;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        .header-content h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+        .header-content p {
+            font-size: 1em;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Navigasi */
+        nav {
+            background: #fff;
+            padding: 0.5em;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav li { margin: 0 10px }
+        nav a {
+            color: #558855;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #e0f2e9 }
+
+        /* Main wrapper */
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 10px;
+        }
+
+        /* Section Kegiatan */
+        .kegiatan {
+            margin-bottom: 30px;
+        }
+
+        .kegiatan h2 {
+            font-size: 1.6em;
+            color: #2e5e2e;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .kegiatan-slider {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slider-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .kegiatan-info {
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+
+        .kegiatan-info h3 {
+            font-size: 1.3em;
+            color: #2e5e2e;
+            margin-bottom: 5px;
+        }
+
+        .kegiatan-info p {
+            font-size: 1em;
+            /* color: #406640; */
+        }
+
+        .kegiatan-info p:first-child {
+            font-size: 0.9em; /* Memperkecil font tanggal */
+            color: #808080; /* Warna abu-abu untuk tanggal */
+        }
+
+        /* Tombol Navigasi */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #558855;
+            color: #fff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 50%;
+            z-index: 10;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn.prev {
+            left: 10px;
+        }
+
+        .slider-btn.next {
+            right: 10px;
+        }
+
+        .slider-btn:hover {
+            background: #406640;
+        }
+
+        /* Footer */
+        footer {
+            background: #2e5e2e;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            header { height: 150px }
+            .header-content h1 { font-size: 1.5em }
+            .header-content p { font-size: 0.9em }
+            nav ul { flex-direction: column; text-align: center }
+            nav li { margin: 8px 0 }
+            .slider-item img { height: 200px }
+            .kegiatan-info { padding: 10px }
+            .kegiatan-info h3 { font-size: 1.1em }
+            .kegiatan-info p { font-size: 0.9em }
+            .kegiatan-info p:first-child { font-size: 0.8em } /* Penyesuaian font tanggal di layar kecil */
+            .slider-btn { width: 25px; height: 25px; font-size: 0.9em }
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigation (same as index.html) -->
-  <nav class="bg-white shadow-lg fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
-            <div class="flex-shrink-0">
-                <a href="index.html" class="text-2xl font-bold text-green-600">Desa Sejahtera</a>
-            </div>
-            <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-4">
-                    <!-- Profil Desa Dropdown -->
-                    <div class="relative dropdown-trigger">
-                        <button onclick="toggleDropdown('profilDropdown')" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium flex items-center">
-                            Profil Desa
-                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div id="profilDropdown" class="dropdown absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                            <div class="py-1">
-                                <a href="tentang-kami.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tentang Kami</a>
-                                <a href="visi-misi.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Visi & Misi</a>
-                                <a href="sejarah.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sejarah</a>
-                                <a href="geografis.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Geografis</a>
-                                <a href="demografi.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Demografi</a>
-                            </div>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="header-content">
+            <h1>Kegiatan Dusun Jambu</h1>
+            <p>Melihat Kegiatan Masyarakat Dusun Jambu</p>
+        </div>
+    </header>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#profil">Profil Dusun</a></li>
+            <li><a href="lembaga-desa.html">Berita</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <section class="kegiatan">
+            <h2>Kegiatan Masyarakat</h2>
+
+            <div class="kegiatan-slider">
+                <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
+                <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+                <div class="slider-container" id="sliderContainer">
+                    <div class="slider-item">
+                        <img src="https://patalan.bantulkab.go.id/assets/files/artikel/sedang_1676904857df23b596407749faaa884e4b3d3c25c4.jpg" alt="Senam Sehat">
+                        <div class="kegiatan-info">
+                            <h3>Senam Sehat Masyarakat Padukuhan Jambu</h3>
+                            <p style="color: grey;">08 Juli 2025</p>
+                            <p style="color: black;">Senam sehat diadakan setiap Sabtu dan Minggu pagi, disambut antusias oleh masyarakat Padukuhan Jambu.</p>
                         </div>
                     </div>
-                    
-                    <!-- Pemerintahan Dropdown -->
-                    <div class="relative dropdown-trigger">
-                        <button onclick="toggleDropdown('pemerintahanDropdown')" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium flex items-center">
-                            Pemerintahan
-                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div id="pemerintahanDropdown" class="dropdown absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                            <div class="py-1">
-                                <a href="perangkat-desa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perangkat Desa</a>
-                                <a href="lembaga-desa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lembaga Desa</a>
-                            </div>
+                    <div class="slider-item">
+                        <img src="https://solusinews.id/wp-content/uploads/2023/09/wajo-sabtu-bersih.jpg" alt="Senam Sehat">
+                        <div class="kegiatan-info">
+                            <h3>Sabtu Bersih</h3>
+                            <p style="color: grey;">08 Juli 2025</p>
+                            <p style="color: black;">Sabtu Bersih merupakan kegiatan bersi-bersih yang rutin diadakan warga setiap hari sabtu pagi pada pukul 06.00 WIB.</p>
                         </div>
                     </div>
-                    
-                    <a href="galeri.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium">Galeri</a>
-                    <a href="umkm.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium">UMKM</a>
-                    <a href="blog.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md font-medium">Blog</a>
+                    <!-- Tambahan slide jika diperlukan -->
+                    <!-- <div class="slider-item">
+                        <img src="[URL_GAMBAR_LAIN]" alt="[Nama Kegiatan Lain]">
+                        <div class="kegiatan-info">
+                            <h3>[Nama Kegiatan Lain]</h3>
+                            <p>[Tanggal]</p>
+                            <p>[Deskripsi kegiatan lain]</p>
+                        </div>
+                    </div> -->
                 </div>
             </div>
-        </div>
-    </div>
-</nav>
+        </section>
+    </main>
 
-  <!-- Page Content -->
-  <main class="pt-20 max-w-7xl mx-auto px-4">
-    <h1 class="text-4xl font-bold text-gray-800 mb-8">Tentang Kami</h1>
-    <p class="text-gray-700 text-lg leading-relaxed mb-6">
-      Desa Sejahtera adalah sebuah desa yang terletak di tengah hamparan sawah hijau yang indah. Kami bangga dengan kearifan lokal dan budaya yang kami jaga serta potensi alam yang melimpah.
-    </p>
-    <p class="text-gray-700 text-lg leading-relaxed mb-6">
-      Desa kami memiliki masyarakat yang ramah dan bersemangat dalam mengembangkan desa menjadi lebih maju dan mandiri. Kami berkomitmen untuk menjaga kelestarian lingkungan dan meningkatkan kesejahteraan warga.
-    </p>
-    <img src="https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg" alt="Desa Sejahtera" class="rounded-lg shadow-lg w-full max-w-4xl mx-auto" />
-  </main>
+    <footer>
+        <p>© 2025 Dusun Jambu. Semua Hak Dilindungi.</p>
+    </footer>
 
-  <!-- Footer (same as index.html) -->
-  <footer class="bg-gray-800 text-white py-12 mt-20">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="grid md:grid-cols-4 gap-8">
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Desa Sejahtera</h3>
-          <p class="text-gray-400">Membangun desa yang maju, mandiri, dan sejahtera dengan tetap menjaga kearifan lokal.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Link Cepat</h3>
-          <ul class="space-y-2">
-            <li><a href="tentang-kami.html" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
-            <li><a href="perangkat-desa.html" class="text-gray-400 hover:text-white">Pemerintahan</a></li>
-            <li><a href="galeri.html" class="text-gray-400 hover:text-white">Galeri</a></li>
-            <li><a href="umkm.html" class="text-gray-400 hover:text-white">UMKM</a></li>
-            <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Kontak</h3>
-          <ul class="space-y-2 text-gray-400">
-            <li class="flex items-start">
-              <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
-              <span>Jl. Desa Sejahtera No. 123<br />Kecamatan Makmur<br />Kabupaten Bahagia</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-phone mr-3"></i>
-              <span>(021) 1234-5678</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-envelope mr-3"></i>
-              <span>info@desasejahtera.id</span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Ikuti Kami</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white text-2xl">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-2xl">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-2xl">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-2xl">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-        <p class="text-gray-400">&copy; 2023 Desa Sejahtera. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slider-item");
+        const container = document.getElementById("sliderContainer");
+
+        function moveSlide(direction) {
+            slideIndex += direction;
+            if (slideIndex >= slides.length) { slideIndex = 0 }
+            if (slideIndex < 0) { slideIndex = slides.length - 1 }
+            const offset = -slideIndex * 100;
+            container.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Otomatis ganti slide setiap 5 detik
+        setInterval(() => moveSlide(1), 5000);
+    </script>
 </body>
 </html>

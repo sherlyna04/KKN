@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UMKM Desa Jambu</title>
+    <title>UMKM Dusun Jambu</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
@@ -86,68 +86,121 @@
         }
 
         .slider {
-          display: flex;
-          overflow-x: auto;
-          gap: 20px;
-          padding: 10px 0;
-          scroll-snap-type: x mandatory;
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 0;
+            scroll-snap-type: x mandatory;
         }
         .slide-card {
-  flex: 0 0 auto;
-  width: 250px;
-  background: #fff;
-  border: 2px solid #558855;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
-  scroll-snap-align: start;
-  transition: transform .3s, box-shadow .3s;
-  display: flex;
-  flex-direction: column;
-}
-
-.slide-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
-}
-
-.card-img {
-  height: 120px; /* setengah tinggi card kira-kira */
-  width: 100%;
-  overflow: hidden;
-}
-
-.card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 12px;
-  text-align: center;
-}
-
-.card-body h3 {
-  font-size: 1.1em;
-  color: #2e5e2e;
-  margin-bottom: 6px;
-}
-
-.card-body p {
-  font-size: 0.9em;
-  color: #406640;
-  margin: 4px 0;
-}
-        .slide-card h3 {
-          font-size:1.1em;
-          color:#2e5e2e;
-          margin:8px 0 5px;
+            flex: 0 0 auto;
+            width: 250px;
+            background: #fff;
+            border: 2px solid #558855;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+            scroll-snap-align: start;
+            transition: transform .3s, box-shadow .3s;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
         }
-        .slide-card p {
-          font-size:0.9em;
-          color:#406640;
-          margin:2px 0;
+        .slide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
+        }
+        .card-img {
+            height: 120px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 12px;
+            text-align: center;
+        }
+        .card-body h3 {
+            font-size: 1.1em;
+            color: #2e5e2e;
+            margin-bottom: 6px;
+        }
+        .card-body p {
+            font-size: 0.9em;
+            color: #406640;
+            margin: 4px 0;
+        }
+
+        /* Section baru: Fasilitas Desa */
+        .fasilitas-desa {
+            margin-top: 20px;
+        }
+        .fasilitas-desa h2 {
+            font-size: 1.8em;
+            color: #2e5e2e;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .fasilitas-category {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 0;
+            scroll-snap-type: x mandatory;
+        }
+        .fasilitas-card {
+            flex: 0 0 auto;
+            width: 250px;
+            background: #fff;
+            border: 2px solid #558855;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+            scroll-snap-align: start;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+        .fasilitas-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
+        }
+        .fasilitas-img {
+            height: 120px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .fasilitas-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .fasilitas-body {
+            padding: 12px;
+            text-align: center;
+        }
+        .fasilitas-body h3 {
+            font-size: 1.1em;
+            color: #2e5e2e;
+            margin-bottom: 6px;
+        }
+        .fasilitas-body p {
+            font-size: 0.9em;
+            color: #406640;
+            margin: 4px 0;
+        }
+        .fasilitas-body a {
+            color: #406640;
+            text-decoration: none;
         }
 
         /* Responsif */
@@ -168,8 +221,8 @@
     <!-- ========== HEADER ========== -->
     <header>
         <div class="header-content">
-            <h1>UMKM Desa Sawah Hijau</h1>
-            <p>Produk Lokal yang Mendunia</p>
+            <h1>Lembaga Masyarakat Terdekat</h1>
+            <p>Layanan Masyarakat di Sekitar Padukuhan Jambu</p>
         </div>
     </header>
 
@@ -177,8 +230,8 @@
     <nav>
         <ul>
             <li><a href="index.html">Beranda</a></li>
-            <li><a href="index.html#profil">Profil Desa</a></li>
-            <li><a href="lembaga-desa.html">Berita</a></li>
+            <li><a href="index.html#profil">Profil Dusun</a></li>
+            <li><a href="lembaga-desa.html">Layanan Masyarakat</a></li>
             <li><a href="index.html#kontak">Kontak</a></li>
         </ul>
     </nav>
@@ -186,65 +239,117 @@
     <!-- ========== MAIN CONTENT ========== -->
     <main>
         <!-- ========= LAYANAN MASYARAKAT TERDEKAT ========= -->
-      <section id="layanan" class="content">
-        <h2>Layanan Masyarakat Terdekat</h2>
+        <section id="layanan" class="content">
+            <h2>Kesehatan</h2>
+            <div class="slider">
+                <a href="https://maps.app.goo.gl/DMVvH6FVgbDAkqKZ6" class="slide-card">
+                    <div class="card-img">
+                        <img src="https://image.idntimes.com/post/20220704/rs-saptosari-34565348ab852e5e1762bb4f15306854-7a975fe22c8257e897f3d6d493be00c7.jpg?tr=w-1920,f-webp,q-75&width=1920&format=webp&quality=75" alt="Puskesmas Jambu">
+                    </div>
+                    <div class="card-body">
+                        <h3>Rumah Sakit Umum Daerah Saptosari</h3>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>Karang, Jetis, Kec. Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871</p>
+                    </div>
+                </a>
 
-        <div class="slider">
-          <!-- Item 1: Puskesmas -->
-          <div class="slide-card">
-            <div class="card-img">
-              <img src="https://suaranusantara.com/wp-content/uploads/2016/12/STANDAR-FOTO-copy-150.jpg" alt="Puskesmas Jambu">
+                <a href="https://maps.app.goo.gl/HVHahhhnASKXzvLQA" class="slide-card">
+                    <div class="card-img">
+                        <img src="https://fakta9.com/wp-content/uploads/2023/10/images-4-696x318.jpeg" alt="Puskesmas Saptosari">
+                    </div>
+                    <div class="card-body">
+                        <h3>Puskesmas Saptosari</h3>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>Jl. Raya Panggang Wonosari, Mojosari, Jetis, Kec. Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871</p>
+                    </div>
+                </a>
             </div>
-            <div class="card-body">
-              <h3>Puskesmas Jambu</h3>
-              <p>Jl. Sawah Hijau No. 20, Dukuh Jambu</p>
-              <p><strong>Telp:</strong> (0274) 123-456</p>
-            </div>
-          </div>
+        </section>
 
-          <!-- Item 2: Posyandu -->
-          <div class="slide-card">
-            <div class="card-img">
-              <img src="https://www.mesujipos.com/wp-content/uploads/2022/04/IMG-20220427-WA0039-1.jpg" alt="Posyandu Melati">
+        <section class="content">
+            <h2>Keagamaan</h2>
+            <div class="fasilitas-category">
+                <a href="https://maps.app.goo.gl/KGkaYhykixp4JmEo8" class="fasilitas-card">
+                    <div class="fasilitas-img">
+                        <img src="images/masji-nur-amaliyah.jpg" alt="Masjid Nur Amaliyah" width="600">
+                    </div>
+                    <div class="fasilitas-body">
+                        <h3>Masjid Nur Amaliyah</h3>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>Jambu, Planjan, Kec. Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871</p>
+                    </div>
+                </a>
+                <a href="https://maps.app.goo.gl/vLd5iSKmchBBjfRUA" class="fasilitas-card">
+                    <div class="fasilitas-img">
+                        <img src="images/pure.jpg" alt="Pure Derpo Kusumo">
+                    </div>
+                    <div class="fasilitas-body">
+                        <h3>Pure Derpo Kusumo</h3>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>Ngepoh, RT.01/RW.05, Ngepoh, Planjan, Kec. Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871</p>
+                    </div>
+                </a>                
             </div>
-            <div class="card-body">
-              <h3>Posyandu Melati</h3>
-              <p>Jl. Sawah Hijau No. 22</p>
-              <p><strong>Telp:</strong> 0812-1111-2222</p>
-            </div>
-          </div>
+        </section>
 
-          <!-- Item 3: Masjid -->
-          <div class="slide-card">
-            <div class="card-img">
-              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinc42rtXOFtdEKfWURfGPKGtwkMX0dwJfHI9nO5UXq14wh6r2oNYJnXqLI2I6dkF_hhUMq-KS1q8pofEvXgeKugwR5lSwIwbcGagP86WzEGvHlknBQyVcTZhnhqb7htKWkZIfCYYkA_gCkpHdhWemt0f8xTzClRd_FuI-J_o6FxKP7LTE7HcuyJMWTWw/s1080/IMG_20230211_144400.jpg" alt="Masjid Al-Hijau">
+        <section id="layanan" class="content">
+            <h2>Fasilitas Umum</h2>
+            <div class="slider">
+                <a href="https://maps.app.goo.gl/kFUKF2cfDm4YfdSN9" class="fasilitas-card">
+                    <div class="fasilitas-img">
+                        <img src="images/pasar-trowono.jpg" alt="Pasar Trowono">
+                    </div>
+                    <div class="fasilitas-body">
+                        <h3>Pasar Trowono</h3>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>Jl. Paliyan Ngobaran, Trowono A, Karangasem, Kec. Paliyan, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871</p>
+                    </div>
+                </a>
+                <a href="https://maps.app.goo.gl/4fFYGeVSV7BdhfKN9" class="fasilitas-card">
+                    <div class="fasilitas-img">
+                        <img src="images/balai-dusun.jpg" alt="Balai Dusun Jambu">
+                    </div>
+                    <div class="fasilitas-body">
+                        <h3>Balai Dusun Jambu</h3>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>Jl. Sawah Hijau No. 32</p>
+                    </div>
+                </a>
             </div>
-            <div class="card-body">
-              <h3>Masjid Al-Hijau</h3>
-              <p>Jl. Sawah Hijau No. 25</p>
-              <p><strong>Telp:</strong> 0857-3333-4444</p>
-            </div>
-          </div>
+        </section>
 
-          <!-- Item 4: Gereja -->
-          <div class="slide-card">
-            <div class="card-img">
-              <img src="https://kas.or.id/wp-content/uploads/2017/03/paroki-st-petrus-dan-paulus-kelor-1.jpg" alt="Gereja Kristen Jambu">
-            </div>
-            <div class="card-body">
-              <h3>Gereja Kristen Jambu</h3>
-              <p>Jl. Sawah Hijau No. 27</p>
-              <p><strong>Telp:</strong> 0857-5555-6666</p>
-            </div>
-          </div>
-          
-        </div>
-      </section>
+        <section id="layanan" class="content">
+            <h2>Pendidikan</h2>
+            <div class="slider">
+                <a href="https://maps.app.goo.gl/Ttq8qbH33ZdJkSMJ9" class="slide-card">
+                    <div class="card-img">
+                        <img src="images/SD-Planjan2-Saptosari.jpg" alt="Puskesmas Jambu">
+                    </div>
+                    <div class="card-body">
+                        <h3>SDN Planjan 2 Saptosari</h3>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>Ngepoh, Planjan, Kec. Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871</p>
+                    </div>
+                </a>
 
+                <a href="https://maps.app.goo.gl/rLCTJkZhDUmLAR6Z7" class="slide-card">
+                    <div class="card-img">
+                        <img src="images/SMP-2-Paliyan.jpg" alt="Puskesmas Jambu">
+                    </div>
+                    <div class="card-body">
+                        <h3>SMP Negeri 2 Paliyan</h3>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>Singkil, Giring, Kec. Paliyan, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871</p>
+                    </div>
+                </a>
+
+                <a href="https://maps.app.goo.gl/BKMGoCBXEEYMannD9" class="slide-card">
+                    <div class="card-img">
+                        <img src="images/TK-Taman-siswa.jpg" alt="Puskesmas Jambu">
+                    </div>
+                    <div class="card-body">
+                        <h3>TK Taman Siswa</h3>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>Ngepoh, Planjan, Kec. Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871</p>
+                    </div>
+                </a>
+            </div>          
+        </section>
     </main>
 
     <footer>
-        <p>© 2025 Desa Sawah Hijau. Semua Hak Dilindungi.</p>
+        <p>© 2025 Dusun Jambu. Semua Hak Dilindungi.</p>
     </footer>
 </body>
 </html>
