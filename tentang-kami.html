@@ -10,9 +10,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- CSS inline -->
     <style>
-        /* Reset & dasar */
         * { margin: 0; padding: 0; box-sizing: border-box }
         body {
             font-family: 'Arial', sans-serif;
@@ -75,7 +73,7 @@
         }
         nav a:hover { color: #e0f2e9 }
 
-        /* Main wrapper */
+        /* Main */
         main {
             max-width: 1000px;
             margin: 20px auto;
@@ -86,33 +84,35 @@
         .kegiatan {
             margin-bottom: 30px;
         }
-
         .kegiatan h2 {
             font-size: 1.6em;
             color: #2e5e2e;
             margin-bottom: 15px;
             text-align: center;
         }
-
         .kegiatan-slider {
             position: relative;
             overflow: hidden;
             margin-bottom: 20px;
         }
-
         .slider-container {
             display: flex;
             transition: transform 0.5s ease;
         }
-
         .slider-item {
             min-width: 100%;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .slider-item img {
-            width: 100%;
-            height: 300px;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
+            aspect-ratio: 16 / 9;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -123,22 +123,20 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-top: 10px;
+            width: 90%;
+            max-width: 800px;
         }
-
         .kegiatan-info h3 {
             font-size: 1.3em;
             color: #2e5e2e;
             margin-bottom: 5px;
         }
-
         .kegiatan-info p {
             font-size: 1em;
-            /* color: #406640; */
         }
-
         .kegiatan-info p:first-child {
-            font-size: 0.9em; /* Memperkecil font tanggal */
-            color: #808080; /* Warna abu-abu untuk tanggal */
+            font-size: 0.9em;
+            color: #808080;
         }
 
         /* Tombol Navigasi */
@@ -160,18 +158,9 @@
             align-items: center;
             justify-content: center;
         }
-
-        .slider-btn.prev {
-            left: 10px;
-        }
-
-        .slider-btn.next {
-            right: 10px;
-        }
-
-        .slider-btn:hover {
-            background: #406640;
-        }
+        .slider-btn.prev { left: 10px; }
+        .slider-btn.next { right: 10px; }
+        .slider-btn:hover { background: #406640; }
 
         /* Footer */
         footer {
@@ -189,18 +178,27 @@
             .header-content p { font-size: 0.9em }
             nav ul { flex-direction: column; text-align: center }
             nav li { margin: 8px 0 }
-            .slider-item img { height: 200px }
-            .kegiatan-info { padding: 10px }
+
+            .slider-item img {
+                width: 95%;
+                aspect-ratio: 4 / 3;
+            }
+
+            .kegiatan-info {
+                padding: 10px;
+                width: 95%;
+            }
+
             .kegiatan-info h3 { font-size: 1.1em }
             .kegiatan-info p { font-size: 0.9em }
-            .kegiatan-info p:first-child { font-size: 0.8em } /* Penyesuaian font tanggal di layar kecil */
+            .kegiatan-info p:first-child { font-size: 0.8em }
             .slider-btn { width: 25px; height: 25px; font-size: 0.9em }
         }
     </style>
 </head>
 <body>
 
-    <!-- ========== HEADER ========== -->
+    <!-- HEADER -->
     <header>
         <div class="header-content">
             <h1>Kegiatan Dusun Jambu</h1>
@@ -208,17 +206,16 @@
         </div>
     </header>
 
-    <!-- ========== NAVIGATION ========== -->
+    <!-- NAV -->
     <nav>
         <ul>
             <li><a href="index.html">Beranda</a></li>
             <li><a href="index.html#profil">Profil Dusun</a></li>
-            <li><a href="lembaga-desa.html">Berita</a></li>
-            <li><a href="index.html#kontak">Kontak</a></li>
+            <li><a href="lembaga-desa.html">Layanan Masyarakat</a></li>
         </ul>
     </nav>
 
-    <!-- ========== MAIN CONTENT ========== -->
+    <!-- MAIN CONTENT -->
     <main>
         <section class="kegiatan">
             <h2>Kegiatan Masyarakat</h2>
@@ -228,39 +225,48 @@
                 <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
                 <div class="slider-container" id="sliderContainer">
                     <div class="slider-item">
-                        <img src="https://patalan.bantulkab.go.id/assets/files/artikel/sedang_1676904857df23b596407749faaa884e4b3d3c25c4.jpg" alt="Senam Sehat">
+                        <img src="images/sabtu-bersih.jpg" alt="Sabtu Bersih">
                         <div class="kegiatan-info">
-                            <h3>Senam Sehat Masyarakat Padukuhan Jambu</h3>
-                            <p style="color: grey;">08 Juli 2025</p>
-                            <p style="color: black;">Senam sehat diadakan setiap Sabtu dan Minggu pagi, disambut antusias oleh masyarakat Padukuhan Jambu.</p>
+                            <h3>Sabtu Bersih Padukuhan Jambu</h3>
+                            <p>12 Juli 2025</p>
+                            <p>Kegiatan Sabtu bersih adalah kegiatan bersih-bersih di sekitaran jalan dusun yang diadakan setiap Sabtu pagi</p>
                         </div>
                     </div>
                     <div class="slider-item">
-                        <img src="https://solusinews.id/wp-content/uploads/2023/09/wajo-sabtu-bersih.jpg" alt="Senam Sehat">
+                        <img src="images/posyandu.jpg" alt="Posyandu dan Poswindu">
                         <div class="kegiatan-info">
-                            <h3>Sabtu Bersih</h3>
-                            <p style="color: grey;">08 Juli 2025</p>
-                            <p style="color: black;">Sabtu Bersih merupakan kegiatan bersi-bersih yang rutin diadakan warga setiap hari sabtu pagi pada pukul 06.00 WIB.</p>
+                            <h3>Posyandu dan Poswindu</h3>
+                            <p>16 Juli 2025</p>
+                            <p>Kegiatan Posyandu dan Poswindu diadakan di balai Padukuhan Jambu dan diikuti dengan antusias oleh warga setempat</p>
                         </div>
                     </div>
-                    <!-- Tambahan slide jika diperlukan -->
-                    <!-- <div class="slider-item">
-                        <img src="[URL_GAMBAR_LAIN]" alt="[Nama Kegiatan Lain]">
+                    <div class="slider-item">
+                        <img src="images/pembuatan-pupuk.JPG" alt="Posyandu dan Poswindu">
                         <div class="kegiatan-info">
-                            <h3>[Nama Kegiatan Lain]</h3>
-                            <p>[Tanggal]</p>
-                            <p>[Deskripsi kegiatan lain]</p>
+                            <h3>Pembuatan Pupuk Kandang</h3>
+                            <p>14 Juli 2025</p>
+                            <p>Kegiatan pembuatan pupuk kandang dilakukan di beberapa titik kandang di Padukuhan Jambu dalam rangka menyukseskan program kerja mahasiswa KKN dari Universitas Atmajaya Yogyakarta</p>
                         </div>
-                    </div> -->
+                    </div>
+                    <div class="slider-item">
+                        <img src="images/penanaman-bibit.jpg" alt="Posyandu dan Poswindu">
+                        <div class="kegiatan-info">
+                            <h3>Penanaman Bibit Buah</h3>
+                            <p>23 Juli 2025</p>
+                            <p>Masyarakat Padukuhan Jambu antusias mengikuti acara pembagian dan penanaman bibit buah dan sayuran yang merupakan bagian dari program kerja mahasiswa KKN UAJY</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <p>© 2025 Dusun Jambu. Semua Hak Dilindungi.</p>
     </footer>
 
+    <!-- SCRIPT -->
     <script>
         let slideIndex = 0;
         const slides = document.getElementsByClassName("slider-item");
@@ -268,14 +274,10 @@
 
         function moveSlide(direction) {
             slideIndex += direction;
-            if (slideIndex >= slides.length) { slideIndex = 0 }
-            if (slideIndex < 0) { slideIndex = slides.length - 1 }
-            const offset = -slideIndex * 100;
-            container.style.transform = `translateX(${offset}%)`;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            container.style.transform = `translateX(-${slideIndex * 100}%)`;
         }
-
-        // Otomatis ganti slide setiap 5 detik
-        setInterval(() => moveSlide(1), 5000);
     </script>
 </body>
 </html>
