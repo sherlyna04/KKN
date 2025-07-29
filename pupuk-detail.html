@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UMKM Dusun Jambu</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f7ee;
+      color: #2e3b2e;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('images/thumbnail.jpg') no-repeat center/cover;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+      text-align: center;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(46, 94, 46, 0.5);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .header-content p {
+      font-size: 1.2em;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    nav {
+      background: #fff;
+      padding: 1em;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #558855;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #e0f2e9;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h2.umkm-section-title {
+      text-align: center;
+      font-size: 2em;
+      color: #2e5e2e;
+      margin-bottom: 40px;
+    }
+
+    .umkm-entry {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      gap: 20px;
+    }
+
+    .umkm-entry.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .umkm-entry img {
+      width: 250px;
+      border-radius: 10px;
+    }
+
+    .umkm-text {
+      flex: 1;
+    }
+
+    .umkm-text h3 {
+      font-size: 1.5em;
+      color: #2e5e2e;
+      margin-bottom: 5px;
+    }
+
+    .umkm-text p {
+      font-size: 1em;
+      color: #406640;
+    }
+
+    .produk-section-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #2e4d2e;
+    }
+    .produk {
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .produk img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .produk-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .produk h3 {
+      margin: 0 0 10px;
+      font-size: 1.5em;
+      color: #3d5f3d;
+    }
+
+    .produk p {
+      margin: 0;
+      font-size: 1em;
+      color: #444;
+    }
+
+    footer {
+      background: #2e5e2e;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .umkm-entry,
+      .umkm-entry.reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .umkm-entry img {
+        width: 100%;
+      }
+
+      .umkm-text {
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .produk-wrapper {
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .produk {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .produk img {
+        width: 300px;
+        margin-right: 30px;
+      }
+
+      .produk-content {
+        flex: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>UMKM Dusun Jambu</h1>
+      <p><em>Padukuhan Jambu dikenal sebagai Dusun dengan UMKM Pengrajin Tembaga</em></p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="index.html#profil">Profil Dusun</a></li>
+      <li><a href="lembaga-desa.html">Layanan Masyarakat</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2 class="umkm-section-title">Tentang Pupuk Berkah Tani</h2>
+
+    <div class="umkm-entry"><img src="images/em4.jpg"><div class="umkm-text"><h3>EM4</h3><p>Kegunaan utama EM4 adalah untuk mempercepat penguraian bahan organik, meningkatkan kualitas tanah dan tanaman, serta mengurangi ketergantungan pada pupuk kimia dan pestisida</p></div></div>
+    <div class="umkm-entry reverse"><img src="images/sekam.jpg"><div class="umkm-text"><h3>Pak Slamet</h3><p>Sekam padi yang sering dianggap limbah pertanian memiliki banyak kegunaan, di antaranya adalah sebagai media tanam, bahan bakar alternatif, dan bahkan bahan bangunan</p></div></div>
+    <div class="umkm-entry"><img src="images/dolomite.jpg"><div class="umkm-text"><h3>Pak Asep Triyanto</h3><p>Kapur dolomite terutama digunakan untuk meningkatkan pH tanah yang asam menjadi netral atau mendekati netral, sehingga mendukung pertumbuhan tanaman yang lebih baik </p></div></div>
+    <div class="umkm-entry reverse"><img src="images/molase.jpg"><div class="umkm-text"><h3>Pak Timanto</h3><p>Molase atau tetes tebu memiliki beragam kegunaan, mulai dari bahan tambahan makanan hingga pupuk organik dan pakan ternak. Molase dapat
+        meningkatkan rasa dan aroma pakan ternak, serta membantu pertumbuhan mikroorganisme dalam proses pembuatan probiotik</p></div></div>
+    <section class="produk-wrapper">
+        <div class="produk">
+        <img src="images/produk-pupuk.jpg" alt="Pupuk Berkah Tani">
+        <div class="produk-content">
+            <h3>Berkah Tani</h3>
+            <p>
+            <strong>Berkah Tani</strong> adalah pupuk organik hasil karya warga Padukuhan Jambu yang diformulasikan dari bahan-bahan alami seperti kotoran ternak, jerami, dan limbah organik rumah tangga. Pupuk ini tidak hanya menyuburkan tanah secara alami, tetapi juga membantu memperbaiki struktur tanah dan mengurangi ketergantungan petani pada pupuk kimia.
+            </p>
+            <p style="margin-top: 10px;">
+            Produk ini telah digunakan oleh warga sekitar dan terbukti meningkatkan hasil panen secara signifikan. Dengan harga terjangkau dan ramah lingkungan, <em>Berkah Tani</em> siap mendukung pertanian berkelanjutan di pedesaan.
+            </p>
+            <p style="margin-top: 15px;">
+                <a href="https://instagram.com/berkahtani.jambu" target="_blank" style="color: #000; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fab fa-instagram" style="font-size: 20px;"></i> @berkahtani
+                </a>
+            </p>
+        </div>
+        </div>
+    </section>
+    </main>
+
+  <footer>
+    <p>© 2025 Dusun Jambu. Semua Hak Dilindungi.</p>
+  </footer>
+</body>
+</html>
